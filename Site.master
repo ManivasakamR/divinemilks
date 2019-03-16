@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Dairy user</title>                    
+    <link href="Content/bootstrap.css" rel="stylesheet" />         
+    <link rel="stylesheet" href="Site/site.css" type="text/css" />    
+    <script src="Scripts/jquery-3.0.0.js" type="text/javascript"></script>                                     
+    <script src="Scripts/bootstrap.js" type="text/javascript"></script>             
+    <script src="Site/SomeeAdsRemover.js"  type="text/javascript"></script>
+    <script src="Scripts/JsCapture.js" type="text/javascript"></script>    
+</head>
+<body>
+    <form id="form1" runat="server">    
+        <!--Nav bar-->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+          <a class="navbar-brand" href="#">              
+                    <img src="Images/logo1.png" width="30" height="30" class="rounded-circle" alt=""/>
+                      Divine milks administrator
+                  </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav mr-auto">                                            
+              <li class="nav-item">
+                <a class="nav-link" href="Notifications.aspx">Notifications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Complaint.aspx">Complaints</a>
+              </li>              
+              <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Generate Notification
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="gnNotifications.aspx">To user</a>
+          <a class="dropdown-item" href="gnvNotifications.aspx">To Vendor</a>          
+        </div>
+      </li>            
+              <li class="nav-item">
+                <a class="nav-link" href="Purchase.aspx">View Purchase</a>
+              </li>              
+                <li class="nav-item">
+                <a class="nav-link" href="Payments.aspx">View Payments</a>
+              </li>                            
+            </ul>
+             <ul class="navbar-nav">
+                <li class="nav-item">
+                <asp:Button ID="btnSignOff"  CausesValidation="false" OnClick="btnSignOff_Click" runat="server" Style="margin-top:2px;" Text="Log me out!" CssClass="btn btn-danger btn-block"  />
+              </li>
+            </ul>            
+          </div>
+        </nav>             
+        <asp:ContentPlaceHolder id="MainContentPlaceHolder" runat="server">
+        
+        </asp:ContentPlaceHolder>        
+    </form>        
+</body>
+</html>
